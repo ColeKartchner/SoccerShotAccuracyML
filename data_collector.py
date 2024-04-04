@@ -7,7 +7,6 @@ from tkinter import simpledialog
 shots_data = []
 
 def onclick(event):
-    # Record x, y coordinates
     x, y = event.xdata, event.ydata
 
     ROOT = tk.Tk()
@@ -17,12 +16,12 @@ def onclick(event):
     ROOT.destroy()
 
     outcome_colors = {1: 'green', 2: 'blue', 3: 'red'}
-    color = outcome_colors.get(outcome, 'gray')  # Default to 'gray' if an invalid number is entered
+    color = outcome_colors.get(outcome, 'gray')
 
     shots_data.append([x, y, outcome])
 
-    plt.plot(x, y, 'o', color=color, markersize=10)  # Adjust the marker size as needed
-    plt.draw()  # Update the plot with the new dot
+    plt.plot(x, y, 'o', color=color, markersize=10)
+    plt.draw()
 
     print(f"Shot recorded at ({x:.2f}, {y:.2f}) with outcome {outcome}")
 
